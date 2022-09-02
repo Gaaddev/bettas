@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../widgets/MomentsDishesWidget.dart';
+import 'MomentsDishesTypes.dart';
 
 class MomentsDishesWidget extends StatefulWidget {
-  const MomentsDishesWidget ({Key? key}) : super(key: key);
+  const MomentsDishesWidget({Key? key}) : super(key: key);
 
   @override
   State<MomentsDishesWidget> createState() => _MomentsDishesWidgetState();
@@ -11,13 +13,17 @@ class _MomentsDishesWidgetState extends State<MomentsDishesWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 265,
-      width: double.infinity,
+      padding: EdgeInsets.all(8.0),
+      height: 500,
+      width: 400,
       child: Column(
         children: [
           MomentsDishesWidgetTitle(),
-          Expanded(
-            child: MomentsDishesModels(imageUrl: '',),
+          Container(
+            height: 480,
+              child: MomentsDishesModels(
+                 imageUrl: '',
+              ),
           ),
         ],
       ),
@@ -37,108 +43,64 @@ class MomentsDishesModels extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-       // Navigator.push(context, ScaleRoute(page: FoodDetailsPage())
+        // Navigator.push(context, ScaleRoute(page: FoodDetailsPage())
         //);
       },
       child: Column(
         children: [
+          SizedBox(
+            height: 8,
+          ),
           Container(
-            padding: const EdgeInsets.only(
-              left: 10,
-              right: 5,
-              top: 5,
-              bottom: 5,
-            ),
-            decoration: BoxDecoration(boxShadow: [
-              /*BoxShadow(
-                 color: Color(0xFFfae3e2),
-                 blurRadius: 15.0,
-                 offset: Offset(0, 0.75),
-               ),*/
-            ]),
+            child: MomentsDishesTypes(),
+            //Row(
+            //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //  children: [
+            //  MomentsDishesTypes(),
+            //    Align(
+            //      alignment: Alignment.centerRight,
+            //    child: Center(
+            //        child: Image.asset(
+            //          'images/jollof_rice.png',
+            //          width: 80,
+            //          height: 80,
+            //        ),
+            //      ),
+            //    ),
+            //    Align(
+            //      alignment: Alignment.centerLeft,
+            //      child: Center(
+            //        child: Image.asset(
+            //          'images/grillades_plat.png',
+            //          width: 80,
+            //          height: 80,
+            //        ),
+            //      ),
+            //    ),
+            //  ],
+          //  ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Container(
+            width: 350,
+            height: 320,
+            padding: const EdgeInsets.all(3.0),
             child: Card(
-              color: Colors.white,
+              color: Colors.white54,
               elevation: 0,
               shape: RoundedRectangleBorder(
                 borderRadius: const BorderRadius.all(
-                  Radius.circular(5.0),
+                  Radius.circular(7),
                 ),
               ),
-              child: Container(
-                width: 170,
-                height: 210,
-                child: Stack(
-                      children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Container(
-                            alignment: Alignment.topRight,
-                            width: double.infinity,
-                            padding: EdgeInsets.only(right: 5, top: 5,),
-                            child: Container(
-                              height: 28,
-                              width: 28,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white70,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0xFFfae3e2),
-                                    blurRadius: 25.0,
-                                    offset: Offset(0.0, 0.75),
-                                  ),
-                                ],
-                              ),
-                              child: Icon(
-                                Icons.favorite,
-                                color: Color(0xFFfb3132),
-                                size: 16,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Center(
-                            child: Image.asset(
-                              imageUrl,
-                              width: 130,
-                              height: 140,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(top: 3, left: 5,),
-                          child: Row(
-                            children: [
-                              Icon(Icons.stars,
-                                size: 10,
-                                color: Color(0xFFfb3132),
-                              ),
-                              Icon(Icons.stars,
-                                size: 10,
-                                color: Color(0xFFfb3132),
-                              ),
-                              Icon(Icons.stars,
-                                size: 10,
-                                color: Color(0xFFfb3132),
-                              ),
-                              Icon(Icons.stars,
-                                size: 10,
-                                color: Color(0xFFfb3132),
-                              ),
-                              Icon(Icons.stars,
-                                size: 10,
-                                color: Color(0xFFfb3132),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-              ),
+                  child: Image.asset(
+                    'images/jollof_t.png',
+                  ),
             ),
           ),
+
         ],
       ),
     );
@@ -151,20 +113,29 @@ class MomentsDishesWidgetTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5,),
+      padding: EdgeInsets.only(
+        left: 10,
+        right: 10,
+        top: 5,
+        bottom: 5,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
-          Text('Popular Foods',
+          Text(
+            'Moment\'s Dishes',
             style: TextStyle(
               fontSize: 20,
               color: Color(0xFF3a3a3b),
               fontWeight: FontWeight.w300,
-            ),),
+            ),
+          ),
           Text(
             'See all',
             style: TextStyle(
-              fontSize: 16, color: Colors.blue, fontWeight: FontWeight.w100,
+              fontSize: 16,
+              color: Colors.black,
+              fontWeight: FontWeight.w100,
             ),
           )
         ],

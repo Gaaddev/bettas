@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../widgets/MomentsDishesWidget.dart';
+import 'package:bettas/widgets/BottomNavBarWidget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -61,24 +62,65 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           SizedBox(
-            height: 5,
-          ),
-          Container(
-            child: MomentsDishesWidget(),
-          ),
-          SizedBox(
             height: 3,
           ),
           Container(
-            child: Text('Food of the day'),
+            height: 600,
+              child: MomentsDishesWidget(),
           ),
-          SizedBox(
-            height: 5,
+          Container(
+            height: 30,
+            child: Row(
+              children: [
+                Text('Food of the day'),
+                Card(
+                  color: Colors.white70,
+                  elevation: 0,
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      padding: EdgeInsets.only(
+                        top: 3,
+                        left: 5,
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.stars,
+                            size: 20,
+                            color: Colors.amberAccent,
+                          ),
+                          Icon(
+                            Icons.stars,
+                            size: 20,
+                            color: Colors.amberAccent,
+                          ),
+                          Icon(
+                            Icons.stars,
+                            size: 20,
+                            color: Colors.amberAccent,
+                          ),
+                          Icon(
+                            Icons.stars,
+                            size: 20,
+                            color: Colors.amberAccent,
+                          ),
+                          Icon(
+                            Icons.stars,
+                            size: 20,
+                            color: Colors.amberAccent,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
-      bottomNavigationBar: //BottomNavBarWidget()
-          null,
+      bottomNavigationBar: BottomNavBarWidget(),
     );
   }
 }

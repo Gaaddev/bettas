@@ -7,7 +7,7 @@ void main() => runApp(MaterialApp(
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.grey,
         ).copyWith(
-          secondary: Colors.red,
+          secondary: Colors.orangeAccent,
         ),
         textTheme: const TextTheme(bodyText2: TextStyle(color: Colors.black)),
       ),
