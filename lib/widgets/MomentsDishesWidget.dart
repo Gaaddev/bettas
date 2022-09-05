@@ -13,14 +13,14 @@ class _MomentsDishesWidgetState extends State<MomentsDishesWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8.0),
-      height: 500,
+      padding: EdgeInsets.all(2.0),
+      height: 420,
       width: 400,
       child: Column(
         children: [
           MomentsDishesWidgetTitle(),
           Container(
-            height: 480,
+            height: 400,
               child: MomentsDishesModels(
                  imageUrl: '',
               ),
@@ -47,10 +47,11 @@ class MomentsDishesModels extends StatelessWidget {
         //);
       },
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
-            height: 8,
-          ),
+         // SizedBox(
+           // height: 2,
+          //),
           Container(
             child: MomentsDishesTypes(),
             //Row(
@@ -80,12 +81,12 @@ class MomentsDishesModels extends StatelessWidget {
             //  ],
           //  ),
           ),
-          SizedBox(
-            height: 5,
-          ),
+         // SizedBox(
+           // height: 0,
+          //),
           Container(
             width: 350,
-            height: 320,
+            height: 300,
             padding: const EdgeInsets.all(3.0),
             child: Card(
               color: Colors.white54,
@@ -100,7 +101,6 @@ class MomentsDishesModels extends StatelessWidget {
                   ),
             ),
           ),
-
         ],
       ),
     );

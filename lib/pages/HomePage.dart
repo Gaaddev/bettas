@@ -59,66 +59,72 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 3,
-          ),
-          Container(
-            height: 600,
-              child: MomentsDishesWidget(),
-          ),
-          Container(
-            height: 30,
-            child: Row(
-              children: [
-                Text('Food of the day'),
-                Card(
-                  color: Colors.white70,
-                  elevation: 0,
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      padding: EdgeInsets.only(
-                        top: 3,
-                        left: 5,
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.stars,
-                            size: 20,
-                            color: Colors.amberAccent,
-                          ),
-                          Icon(
-                            Icons.stars,
-                            size: 20,
-                            color: Colors.amberAccent,
-                          ),
-                          Icon(
-                            Icons.stars,
-                            size: 20,
-                            color: Colors.amberAccent,
-                          ),
-                          Icon(
-                            Icons.stars,
-                            size: 20,
-                            color: Colors.amberAccent,
-                          ),
-                          Icon(
-                            Icons.stars,
-                            size: 20,
-                            color: Colors.amberAccent,
-                          ),
-                        ],
+      body: Container(
+        height: 650,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 1,
+            ),
+            Container(
+              height: 450,
+                child: MomentsDishesWidget(),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 100,),
+              height: 30,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Food of the day'),
+                  Card(
+                    color: Colors.white70,
+                    //elevation: 0,
+                    child: Align(
+                      //alignment: Alignment.topRight,
+                      child: Container(
+                        padding: EdgeInsets.only(
+                          top: 3,
+                          left: 5,
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.stars,
+                              size: 20,
+                              color: Colors.amberAccent,
+                            ),
+                            Icon(
+                              Icons.stars,
+                              size: 20,
+                              color: Colors.amberAccent,
+                            ),
+                            Icon(
+                              Icons.stars,
+                              size: 20,
+                              color: Colors.amberAccent,
+                            ),
+                            Icon(
+                              Icons.stars,
+                              size: 20,
+                              color: Colors.amberAccent,
+                            ),
+                            Icon(
+                              Icons.stars,
+                              size: 20,
+                              color: Colors.amberAccent,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavBarWidget(),
     );
