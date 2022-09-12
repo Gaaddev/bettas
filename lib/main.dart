@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../pages/HomePage.dart';
+import '../pages/StartPage.dart';
 
 void main() => runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.grey,
@@ -11,5 +11,5 @@ void main() => runApp(MaterialApp(
         ),
         textTheme: const TextTheme(bodyText2: TextStyle(color: Colors.black)),
       ),
-      home: HomePage(),
+      home: const StartPage(),
     ));
